@@ -38,7 +38,7 @@ const Cart = () => {
         </div>
         <button
             onClick={handleCheckout}
-            className="uppercase w-full mt-10 rounded-md cursor-pointer p-3 bg-orange-300  text-lg hover:bg-orange-400"
+            className=" uppercase w-full  mt-10 rounded-md cursor-pointer p-3 bg-orange-300  text-lg hover:bg-orange-400"
           >
             Checkout
           </button>
