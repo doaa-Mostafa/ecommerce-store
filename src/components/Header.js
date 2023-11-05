@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
-import { BsHeart } from "react-icons/bs"; // Import the heart icon
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
+import FilterCategory from "../components/FilterCategory";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -21,17 +23,21 @@ const Header = () => {
       } fixed w-full z-10 transition-all`}
     >
       <div className="container mx-auto flex items-center justify-between h-full">
-        <Link to={"/"}>
-          <div>
-            <img className="w-[40px]" src={"logo.png"} alt="logo" />
-          </div>
-        </Link>
+        <div>
+          <Link to={"/"}>
+            <span>Home</span>
+          </Link>
+        </div>
+        <div>
+          <FilterCategory />
+        </div>
 
         <div className="cursor-pointer flex relative">
           <Link to={"/favorite"}>
-            <div>
-              <BsHeart className="text-2xl mr-4 text-gray-700" />
-            </div>
+            <FontAwesomeIcon
+              icon={faHeart}
+              className="text-2xl mr-4 text-gray-300"
+            />
           </Link>
           <Link to={"/cart"}>
             <FiShoppingCart className="text-2xl" />

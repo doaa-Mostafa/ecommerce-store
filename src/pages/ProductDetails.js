@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 import { ProductContext } from "../contexts/ProductContext";
@@ -26,7 +26,10 @@ const ProductDetails = () => {
         <div className="flex flex-col lg:flex-row items-center ">
           <div className="flex flex-1  justify-center items-center lg:mb-8  ">
             <div className=" p-20">
-              <img className="max-w-[200px] lg:max-w-[300px] shadow-lg p-2 rounded-lg" src={image} />
+              <img
+                className="max-w-[200px] lg:max-w-[300px] shadow-lg p-2 rounded-lg"
+                src={image}
+              />
             </div>
           </div>
           <div className="flex-1 text-center lg:text-left">

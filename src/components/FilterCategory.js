@@ -1,14 +1,17 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ProductContext } from "../contexts/ProductContext";
 
-const FilterCategory = ({setCategory}) => {
-    const { products } = useContext(ProductContext);
+const FilterCategory = () => {
+  const { products } = useContext(ProductContext);
+  const [category, setCategory] = useState("");
+  const navigate = useNavigate();
 
-  // Extract unique categories from products
- 
-   const categories = [...new Set(products.map((product) => product.category))];
-   const handleCategory = (category) => {
-    setCategory(category)
+  const categories = [...new Set(products.map((product) => product.category))];
+
+  const handleCategory = (category) => {
+    setCategory(category);
+    navigate(`/category/${category}`);
   };
 
   return (
@@ -16,7 +19,7 @@ const FilterCategory = ({setCategory}) => {
       {categories.map((category) => (
         <div
           key={category}
-          className="bg-orange-400 rounded-md  text-[20px] text-white p-2 m-2"
+          className="uppercase font-bold text-[17px] text-gray-700 p-2 m-2  hover:text-orange-500"
           onClick={() => handleCategory(category)}
         >
           {category}
@@ -26,4 +29,4 @@ const FilterCategory = ({setCategory}) => {
   );
 };
 
-export default FilterCategory
+export default FilterCategory;

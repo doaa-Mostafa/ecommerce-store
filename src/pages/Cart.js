@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import CartItem from "../components/CartItem";
 import { CartContext } from "../contexts/CartContext";
 
 const Cart = () => {
   const { cart, clearCart, total } = useContext(CartContext);
+
+  // useEffect(() => {
+  //   // Scroll to the top of the page when the component mounts
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   // Function to handle the checkout action
   const handleCheckout = () => {
