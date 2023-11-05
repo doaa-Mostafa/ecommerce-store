@@ -20,7 +20,7 @@ const Product = ({ product }) => {
 
   const toggleFavorite = () => {
     if (isFavorite) {
-      removeFromFavorites(id);
+      removeFromFavorites(product,id);
     } else {
       addToFavorites(product);
     }

@@ -8,8 +8,8 @@ const Home = () => {
   // Filter products based on the selected category
 
   return (
-    <div className=" ">
-      <div className=" ">
+    <div>
+      <div className=" mt-10">
         <Hero />
       </div>
       <div className=" flex justify-center items-center "></div>

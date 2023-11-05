@@ -14,7 +14,6 @@ const App = () => {
     <div className="overflow-hidden">
       <Router>
         <ScrollToTop />{" "}
-        {/* This component ensures scrolling to the top on route changes */}
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
