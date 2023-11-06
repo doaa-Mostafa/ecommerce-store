@@ -1,8 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as faHeartSolid, faHeart } from "@fortawesome/free-solid-svg-icons";
-import { FiShoppingCart } from "react-icons/fi";
+import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeart as faHeartSolid,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../contexts/CartContext";
 import { FavoriteContext } from "../contexts/FavoriteContext";
 
@@ -14,13 +17,13 @@ const Product = ({ product }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   var numberString = price.toString();
-  var parts = numberString.split('.');
+  var parts = numberString.split(".");
   var integerPrice = parts[0];
   var decimalPrice = parts[1];
 
   const toggleFavorite = () => {
     if (isFavorite) {
-      removeFromFavorites(product,id);
+      removeFromFavorites(product, id);
     } else {
       addToFavorites(product);
     }
@@ -68,8 +71,11 @@ const Product = ({ product }) => {
         </div>
 
         <button onClick={() => addToCart(product, id)}>
-          <div className="absolute right-0 bottom-0 text-orange-500 w-12 h-12 flex justify-center items-center hover:shadow-lg hover:rounded-full hover:scale-110">
-            <FiShoppingCart className="text-3xl" />
+          <div className="absolute right-0 bottom-0  w-12 h-12 flex justify-center items-center hover:shadow-lg hover:rounded-full hover:scale-110">
+            <FontAwesomeIcon
+              icon={faCartArrowDown}
+              className="text-3xl text-orange-500"
+            />
           </div>
         </button>
         <div className="absolute bottom-0">

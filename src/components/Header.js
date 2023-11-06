@@ -1,7 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { FiShoppingCart } from "react-icons/fi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeart,
+  faUser,
+  faShoppingCart,
+} from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -93,14 +96,25 @@ const Header = () => {
         )}
 
         <div className="cursor-pointer flex relative">
+          <Link to={"/login"}>
+            {" "}
+            {/* Add the login link */}
+            <FontAwesomeIcon
+              icon={faUser}
+              className="text-2xl ml-4 text-gray-400 mr-5"
+            />
+          </Link>
           <Link to={"/favorite"}>
             <FontAwesomeIcon
               icon={faHeart}
-              className="text-2xl mr-4 text-gray-300"
+              className="text-2xl mr-4 text-gray-400"
             />
           </Link>
           <Link to={"/cart"}>
-            <FiShoppingCart className="text-2xl" />
+            <FontAwesomeIcon
+              icon={faShoppingCart}
+              className="text-2xl  text-gray-400"
+            />
             <div className="bg-orange-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
               {itemAmount}
             </div>
