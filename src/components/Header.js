@@ -72,7 +72,7 @@ const Header = () => {
           </div>
         </div>
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed top-14 left-0 h-[340px] w-full bg-white transition-all">
+          <div className="md:hidden fixed top-14 left-0 h-full w-56 bg-white transition-all">
             <div className="flex flex-col p-4  ">
               <Link
                 className="mb-5 p-2 border-b-2 text-orange-500 font-bold"
